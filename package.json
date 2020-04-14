@@ -1,6 +1,6 @@
 {
   "name": "@toancong/lazyloadjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper for lazy load",
   "main": "lazyload.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/toancong/lazyload.js#readme",
   "dependencies": {
-    "jsonapi-datastore": "*"
+    "jsonapi-datastore": "^0.4.0-beta"
   }
 }
