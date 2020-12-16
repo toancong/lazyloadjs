@@ -1,6 +1,6 @@
 {
   "name": "@toancong/lazyloadjs",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Helper for lazy load",
   "main": "lazyload.js",
   "scripts": {

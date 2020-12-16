@@ -1,7 +1,10 @@
 <template>
     <div>
         <i v-if="isShowLoading" class="fa fa-spinner fa-spin text-info"></i>
-        <div v-html="content"></div>
+        <slot v-if="!isShowLoading">
+            <div v-html="content">
+            </div>
+        </slot>
     </div>
 </template>
 <script>
@@ -9,13 +12,23 @@
         props: {
             content: String,
             timeout: {type: Number, default: 5000},
+            watch: {validator: v => true}
         },
         computed: {
             hasContent () {
                 return this.content;
             },
             isShowLoading () {
-                return !this.hasContent && !this.isTimeout;
+                if (this.isTimeout) {
+                    return false;
+                }
+                if (this.hasContent) {
+                    return false;
+                }
+                if (this.watch) {
+                    return false;
+                }
+                return true;
             }
         },
         data() {
